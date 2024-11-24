@@ -53,7 +53,7 @@ class Graph
             }
     };
 
-void bfs(int start)
+void bfs(vector<vector<int>> adjList, int start)
 {
     vector<bool> visited(SIZE, false); 
 
@@ -62,7 +62,23 @@ void bfs(int start)
     visited[start] = true; 
     q.push(start); 
 
-    
+    cout<<"DFS starting from vertex "<<start<<":"<<endl;
+
+    while(!q.empty()) 
+    {
+        int current = q.front();
+        q.pop(); 
+        cout<<current<<" ";
+
+        for(int x: adjList[current])
+        {
+            if(!visited[x]) 
+            {
+                visited[x] = true;
+                q.push(x);
+            }
+        }
+    }
 
 }
 
@@ -79,6 +95,8 @@ int main() {
 
     // Prints adjacency list representation of graph
     graph.printGraph();
+
+    void bfs(graph, 0);
 
     return 0;
 }
