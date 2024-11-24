@@ -52,8 +52,10 @@ class Graph
             }
     };
 
+void bfs(int start){}
+
 int main() {
-    
+
     // Creates a vector of graph edges/weights
     vector<Edge> edges = {
     // (x, y, w) —> edge from x to y having weight w
