@@ -1,4 +1,5 @@
 #include <iostream>
+#include <queue>
 #include <vector>
 
 using namespace std;
@@ -52,7 +53,18 @@ class Graph
             }
     };
 
-void bfs(int start){}
+void bfs(int start)
+{
+    vector<bool> visited(SIZE, false); 
+
+    queue<int> q; 
+
+    visited[start] = true; 
+    q.push(start); 
+
+    
+
+}
 
 int main() {
 
