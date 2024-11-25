@@ -4,7 +4,7 @@
 
 using namespace std;
 
-const int SIZE = 7;
+const int SIZE = 13;
 
 struct Edge 
     {
@@ -51,7 +51,7 @@ class Graph
                     cout << endl;
                     }
             }
-    void bfs(int start)
+   /* void bfs(int start)
         {
             vector<bool> visited(SIZE, false); 
 
@@ -89,7 +89,7 @@ class Graph
         for (int x : adjList[s])
             if(visited[x] == false)
                 dfsRecursive(x);     
-    }
+    }*/
 
     };
 
@@ -106,7 +106,8 @@ int main() {
     // (x, y, w) —> edge from x to y having weight w
     {0,2,8}, {0,3,21},{0,7,7}, {0,11,11},{0,12,12},{2,3,6},{2,6,2},{2,4,4},{2,9,5},
     {3,8,18},{4,9,9},{6,9,6},{6,10,2},{7,10,10},{11,12,13}
-    };
+    }; //manually add the deleted the nodes. deleted nodes 1 and 5
+        // added nodes 7, 8, 9, 10, 11, 12
 
     // Creates graph
     Graph graph(edges);
