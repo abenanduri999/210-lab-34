@@ -51,11 +51,7 @@ class Graph
                     cout << endl;
                     }
             }
-    
-        
-    };
-
-void bfs(int start)
+    void bfs(int start)
         {
             vector<bool> visited(SIZE, false); 
 
@@ -83,8 +79,24 @@ void bfs(int start)
             }
 
         }
+     void dfsRecursive (int s)
+    {   
+        vector<bool> visited (SIZE, false);
+        visited[s] = true;
+        
+        cout<<"DFS starting from vertex"<<s<<": "<<endl;  
 
-    void dfs 
+        for (int x : adjList[s])
+            if(visited[x] == false)
+                dfsRecursive(x);     
+    }
+
+
+    };
+
+
+
+   
 
 int main() {
 
@@ -102,7 +114,7 @@ int main() {
     // Prints adjacency list representation of graph
     graph.printGraph();
 
-    bfs(graph, 0); 
+    graph.bfs(0); 
 
     return 0;
 }
