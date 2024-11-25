@@ -91,7 +91,6 @@ class Graph
                 dfsRecursive(x);     
     }
 
-
     };
 
 
@@ -105,7 +104,8 @@ int main() {
     // Creates a vector of graph edges/weights
     vector<Edge> edges = {
     // (x, y, w) —> edge from x to y having weight w
-    {0,1,12},{0,2,8},{0,3,21},{2,3,6},{2,6,2},{5,6,6},{4,5,9},{2,4,4},{2,5,5}
+    {0,2,8}, {0,3,21},{0,7,7}, {0,11,11},{0,12,12},{2,3,6},{2,6,2},{2,4,4},{2,9,5},
+    {3,8,18},{4,9,9},{6,9,6},{6,10,2},{7,10,10},{11,12,13}
     };
 
     // Creates graph
@@ -114,7 +114,7 @@ int main() {
     // Prints adjacency list representation of graph
     graph.printGraph();
 
-    graph.bfs(0); 
+   // graph.bfs(0); 
 
     return 0;
 }
