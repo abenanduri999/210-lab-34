@@ -51,38 +51,44 @@ class Graph
                     cout << endl;
                     }
             }
+    
+        
     };
 
-void bfs(vector<vector<int>> adjList, int start)
-{
-    vector<bool> visited(SIZE, false); 
-
-    queue<int> q; 
-
-    visited[start] = true; 
-    q.push(start); 
-
-    cout<<"DFS starting from vertex "<<start<<":"<<endl;
-
-    while(!q.empty()) 
-    {
-        int current = q.front();
-        q.pop(); 
-        cout<<current<<" ";
-
-        for(int x: adjList[current])
+void bfs(int start)
         {
-            if(!visited[x]) 
-            {
-                visited[x] = true;
-                q.push(x);
-            }
-        }
-    }
+            vector<bool> visited(SIZE, false); 
 
-}
+            queue<int> q; 
+
+            visited[start] = true; 
+            q.push(start); 
+
+            cout<<"BFS starting from vertex "<<start<<":"<<endl;
+
+            while(!q.empty()) 
+            {
+                int current = q.front();
+                q.pop(); 
+                cout<<current<<" ";
+
+                for(int x: adjList[current]) //wawsnt sure how to access the adjacency list
+                {
+                    if(!visited[x]) 
+                    {
+                        visited[x] = true;
+                        q.push(x);
+                    }
+                }
+            }
+
+        }
+
+    void dfs 
 
 int main() {
+
+    
 
     // Creates a vector of graph edges/weights
     vector<Edge> edges = {
@@ -96,7 +102,7 @@ int main() {
     // Prints adjacency list representation of graph
     graph.printGraph();
 
-    void bfs(graph, 0);
+    bfs(graph, 0); 
 
     return 0;
 }
